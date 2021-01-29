@@ -1,0 +1,14 @@
+﻿@model Sprint_3_V1.Models.Customer
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+
+<div style="margin-top:20px;margin-bottom:0px;">
+
+    @using (Html.BeginForm(@*"Index", "Customers", FormMethod.Post*@))
+    {
+        @Html.EditorFor(model => model.Search)
+
+        <button class="btn active btn-primary" style="text-align:center;font-family:Arial;padding:3px 12px" type="submit" value="Search">Search</button>
+    }
+</div>
+
+

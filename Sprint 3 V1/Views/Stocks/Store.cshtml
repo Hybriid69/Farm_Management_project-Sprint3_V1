@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Sprint_3_V1.ViewModels.StockViewModel>
+
+@{
+    ViewBag.Title = "Stocks";
+}
+<style>
+    html > body #divbody:hover {
+    background-color: #E3E3E3;
+    cursor: pointer;
+}
+</style>
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Store</h2>
+<p class="pull-right">
+    @Html.Action("StockSort", "Stocks", new { @style = "margin-left:10px;" })
+
+</p>
+<p class="pull-left">
+    @Html.Action("Search", "Stocks", new { @style = "margin-left:10px;" })
+
+</p>
+
+@*<p class="text-danger">
+    @ViewBag.LessQuantityMessage
+</p>*@
+
+    @foreach (var item in Model)
+    {
+        <div id="divbody" class="table-hover" onclick="location.href='@Url.Action("Details", "Stocks", new { id = item.StockID })'" style="width:auto;display:inline-block;padding:25px">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @try
+            {
+
+                var base64 = Convert.ToBase64String(item.StockImage);
+                var imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+            <img src='@imgsrc' style="max-width:220px;max-height:200px;margin-left: 10px" />
+
+            }
+            catch
+            {
+                if (item.StockImage == null)
+                {
+            <img width="40" height="40" src="https://ixxidesign.azureedge.net/media/2388044/marcus-kraft-12-dont-worry-be-happy-white.jpg?mode=max&width=562&height=749" />
+                }
+            }
+            <table style="width:100%">
+                <tr>
+                    @*<td>
+                        @Html.DisplayNameFor(model => model.CropName):
+                    </td>*@
+
+                    <td style="padding-left:5px;text-align:center" colspan="2">
+                        @Html.DisplayFor(modelItem => item.CropName)
+                    </td>
+                </tr>
+
+                @*<tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.CurQuantity):
+                    </td>
+
+                    <td style="padding-left:5px">
+                        @Html.DisplayFor(modelItem => item.CurQuantity)
+                    </td>
+                </tr>*@
+                @*<tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Expiery):
+                    </td>
+
+                    <td style="padding-left:5px">
+                        @Html.DisplayFor(modelItem => item.Expiery)
+                    </td>
+                    </tr>*@
+                <tr>
+                    <td style="text-align:center">
+                        @Html.DisplayNameFor(model => model.Price):
+                        </td>
+                            <td>
+                        R @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @*@Html.Action("Quantity", "Stocks", new { @style = "margin-left:10px;" })*@
+
+
+                    </td>
+                </tr>
+            </table>
+
+            @*<div style="padding-top:10px">
+                <div colspan="2" style="padding-top:5px;text-align:center;">
+                    <button class="btn btn-primary btn-lg" style="text-align:center;font-family:Arial" type="button" value="Details" onclick="location.href='@Url.Action("Details", "Stocks", new { id = item.StockID })'">Details</button>
+                </div>
+            </div>*@
+
+        </div>
+    }
+
+@if (ViewBag.successMessage != null)
+{
+    <script>
+        $(window).load(function () {
+            alert('@ViewBag.successMessage');
+            });
+    </script>
+}
+@if (ViewBag.LessQuantityMessage != null)
+{
+    <script>
+        $(window).load(function () {
+            alert('@ViewBag.LessQuantityMessage');
+        });
+    </script>
+}

@@ -1,0 +1,18 @@
+﻿@model Sprint_3_V1.ViewModels.StockSort 
+
+<div class="pull-right">
+    @*@Html.DropDownListFor(model => model.SortBy, new List<SelectListItem>
+             {
+        new SelectListItem {Text="Name Ascending" },
+        new SelectListItem {Text="Name Descending" },
+        new SelectListItem {Text="Price Ascending" },
+        new SelectListItem {Text="Price Descending" }
+             }, new { @class = "form-control" })*@
+    <select>
+        
+        <option class="btn" value="Name Ascending">Name Ascending</option>
+
+        <option value="Name Descending">Name Ascending</option>
+
+    </select>
+</div>

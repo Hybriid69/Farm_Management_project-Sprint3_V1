@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Sprint_3_V1.Models.Planted>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cropsinfo.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Field.FieldName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CropName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityPlanted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlantedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedHarvestDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedYield)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastWatered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextWater)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cropsinfo.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Field.FieldName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CropName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityPlanted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlantedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedHarvestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedYield)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastWatered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NextWater)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlantedID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PlantedID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PlantedID })
+        </td>
+    </tr>
+}
+
+</table>

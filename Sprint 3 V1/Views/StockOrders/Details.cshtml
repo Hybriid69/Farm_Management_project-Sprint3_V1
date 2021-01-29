@@ -1,0 +1,50 @@
+﻿@model Sprint_3_V1.Models.StockOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Details</h2>
+
+<div>
+    <h4>StockOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock.StockID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock.StockID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SOID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Sprint_3_V1.ViewModels.CheckoutItemsViewModel>
+
+<table class="table">
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StockName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.StockName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockName)
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td></td>
+                <td></td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.OrderID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.OrderID })
+                    </td>*@
+            </tr>
+    }
+</table>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Sprint_3_V1.Models.Farm>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FarmName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumWorkers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumLand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disabled)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FarmName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumWorkers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumLand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disabled)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FarmID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FarmID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FarmID })
+        </td>
+    </tr>
+}
+
+</table>

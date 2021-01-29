@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Sprint_3_V1.Models.StocksImage>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock.StockID)
+        </th>
+        <td>
+            @Html.DisplayNameFor(model => model.Stock.CropInfo.Name)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.StockImage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock.StockID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock.CropInfo.Name)
+        </td>
+        <td>
+            @try
+                {
+
+                    var base64 = Convert.ToBase64String(item.StockImage);
+                    var imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+                <img src='@imgsrc' style="max-width:100px;max-height:100px" />
+
+
+            }
+            catch
+            {
+                if (item.StockImage == null)
+                {
+                    <img width="40" height="40" src="https://ixxidesign.azureedge.net/media/2388044/marcus-kraft-12-dont-worry-be-happy-white.jpg?mode=max&width=562&height=749" />
+                }
+            }
+
+        </td>
+
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.StockImageID }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.StockImageID }) 
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.StockImageID })*@
+        </td>
+    </tr>
+}
+
+</table>

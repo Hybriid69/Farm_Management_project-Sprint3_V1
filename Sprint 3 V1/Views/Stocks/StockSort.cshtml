@@ -1,0 +1,45 @@
+﻿@model Sprint_3_V1.ViewModels.StockSort
+
+<body>
+
+    @using (Html.BeginForm("StockSort", "Stocks", FormMethod.Post, new { @name = "Form1" }))
+    {
+        
+        <div id="drp" class="pull-right">
+            <table>
+                <tr>
+                    <td style="padding-right:5px;">
+                        Sort by:
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(model => model.SortBy, new List<SelectListItem>
+                     {
+                new SelectListItem {Text="Name Ascending" },
+                new SelectListItem {Text="Name Descending" },
+                new SelectListItem {Text="Price Ascending" },
+                new SelectListItem {Text="Price Descending" }
+                     }, new { @id = "SortByID", @class = "form-control" })
+                    </td>
+                </tr>
+            </table>
+            @*@Html.DropDownList("SortBy", new List<SelectListItem>
+                     {
+                new SelectListItem {Text="Name Ascending" },
+                new SelectListItem {Text="Name Descending" },
+                new SelectListItem {Text="Price Ascending" },
+                new SelectListItem {Text="Price Descending" }
+                     }, "Please select", new { @id = "SortBy" })*@
+
+            @Html.Hidden("SortBy", null, new { @id = "SortByName" })
+
+
+        </div>
+    }
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $("body").on("change", "#SortByID", function () {
+        $("#SortByName").val($(this).find("option:selected").text());
+        document.forms["Form1"].submit();
+    });
+</script>

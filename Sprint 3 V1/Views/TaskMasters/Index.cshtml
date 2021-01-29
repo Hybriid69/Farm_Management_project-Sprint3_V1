@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Sprint_3_V1.Models.TaskMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MTaskID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MTaskID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MTaskID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,21 @@
+﻿@model Sprint_3_V1.ViewModels.StockViewModel
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+
+<div style="margin-top:20px;margin-bottom:0px;">
+
+    @using (Html.BeginForm("Store", "Stocks", FormMethod.Post))
+    {
+        @Html.EditorFor(model => model.Search, new { @id = "search" })
+
+        <button class="btn active btn-primary" style="text-align:center;font-family:Arial;margin-left:5px;padding:3px 12px" type="submit" value="Search">Search</button>
+
+    }
+    <button class="btn active btn-primary" style="text-align:center;font-family:Arial;padding:3px 12px;margin-left:257px;margin-top: -52px;" type="button" id="Clear" value="Clear"  onclick="location.href='@Url.Action("Store", "Stocks", new { @id="clear" })'">Clear</button>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Clear").each(function () {
+            $(search).val("");
+        });
+    });
+</script>

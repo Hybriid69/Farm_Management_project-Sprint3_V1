@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Sprint_3_V1.Models.PlantedTask>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Planted.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assigned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedCompletion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompletedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flag)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Planted.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assigned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedCompletion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompletedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flag)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PTaskID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PTaskID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PTaskID })
+        </td>
+    </tr>
+}
+
+</table>

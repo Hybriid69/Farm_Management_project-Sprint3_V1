@@ -1,0 +1,34 @@
+﻿@model Sprint_3_V1.Models.StocksImage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StocksImage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock.StockID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock.StockID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StockImageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

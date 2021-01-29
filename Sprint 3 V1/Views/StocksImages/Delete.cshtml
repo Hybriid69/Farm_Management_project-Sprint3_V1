@@ -1,0 +1,40 @@
+﻿@model Sprint_3_V1.Models.StocksImage
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StocksImage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock.StockID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock.StockID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockImage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model Sprint_3_V1.Models.CropTask
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Details</h2>
+
+<div>
+    <h4>CropTask</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CropInfo.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CropInfo.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskMaster.TaskName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaskMaster.TaskName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CTID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

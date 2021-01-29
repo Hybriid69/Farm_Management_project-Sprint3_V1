@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Sprint_3_V1.Models.Group>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GroupID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GroupID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GroupID })
+        </td>
+    </tr>
+}
+
+</table>

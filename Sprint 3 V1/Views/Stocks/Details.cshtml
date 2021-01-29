@@ -1,0 +1,119 @@
+﻿@model Sprint_3_V1.ViewModels.StockViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.CropName)</h4>
+    <hr />
+    @using (Html.BeginForm("AddToOrders", "Orders", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <table>
+            @Html.HiddenFor(model => model.StockID)
+
+            <tr>
+                <td colspan="2">
+                    @try
+                {
+
+                    var base64 = Convert.ToBase64String(Model.StockImage);
+                    var imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+                        <img src='@imgsrc' style="max-width:200px;max-height:200px" />
+
+                    }
+                    catch
+                    {
+                        if (Model.StockImage == null)
+                        {
+                            <img width="40" height="40" src="https://ixxidesign.azureedge.net/media/2388044/marcus-kraft-12-dont-worry-be-happy-white.jpg?mode=max&width=562&height=749" />
+                        }
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.CropName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.CropName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.CurQuantity)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.CurQuantity)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.QuantityWanted)
+                </td>
+
+                <td>
+                    @Html.EditorFor(model => model.QuantityWanted)
+                </td>
+            </tr>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Harvested)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Harvested)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Expiery)
+                </dt>
+
+                <dd>
+                    @Html@.DisplayFor(model => model.Expiery)
+                </dd>
+            *@
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.ExpFlag)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ExpFlag)
+                </dd>*@
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Price)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.Price)
+                </td>
+            </tr>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Disabled)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Disabled)
+                </dd>*@
+
+
+            <tr style="padding-top:10px">
+
+                <td colspan="2" style="padding-top:5px;text-align:center;">
+                    <button class="btn btn-primary btn-lg" style="text-align:center;font-family:Arial" type="submit" value="Add to Orders">Add to Cart</button>
+                </td>
+        </table>
+
+        @*<div colspan="2" style="padding-top:5px;text-align:center;">
+            <button class="btn btn-primary btn-lg" style="text-align:center;font-family:Arial" type="submit" value="Add to Orders" onclick="location.href='@Url.Action("AddToOrders", "Orders", new { stockid = Model.StockID, qty = Model.QuantityWanted}))'">Add to Cart</button></div>*@
+
+
+    }
+</div> 

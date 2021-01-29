@@ -1,0 +1,106 @@
+﻿@model Sprint_3_V1.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Account.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Group.GName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Group.GName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateHired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateHired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KinContactNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KinContactNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FarmID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FarmID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

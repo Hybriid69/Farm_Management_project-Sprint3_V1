@@ -1,0 +1,90 @@
+﻿@model Sprint_3_V1.Models.CropInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Details</h2>
+
+<div>
+    <h4>CropInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Season)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Season)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spacing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spacing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageYield)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageYield)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IrrigationInterval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IrrigationInterval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrowthTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrowthTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LifeExpect)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LifeExpect)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disabled)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CropID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

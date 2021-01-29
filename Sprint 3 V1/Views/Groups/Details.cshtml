@@ -1,0 +1,34 @@
+﻿@model Sprint_3_V1.Models.Group
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<h2>Details</h2>
+
+<div>
+    <h4>Group</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GroupID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

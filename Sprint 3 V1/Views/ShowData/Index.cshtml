@@ -1,0 +1,41 @@
+﻿@model Sprint_3_V1.ViewModels.HomeScreenVM
+
+@{
+    ViewBag.Title = "Data";
+}
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+<div class="jumbotron">
+    <h2>Farmer's Fresh Produce</h2>
+    <p class="lead"></p>
+    <p class="lead">Good Day</p>
+</div>
+
+<style type="text/css">
+    .jumbotron {
+        background-image: url('../../Content/Images/bhavesh.jpg');
+        background-size: cover;
+    }
+</style>
+
+<a class="weatherwidget-io" href="https://forecast7.com/en/n29d8631d02/durban/" data-label_1="DURBAN" data-label_2="WEATHER" data-theme="original">DURBAN WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+
+
+
+
+<h2>Currently Growing Fields</h2>
+
+<div>
+    @{ WebGrid db = new WebGrid(source: Model.plantedsss, canPage: true, rowsPerPage: 10);}
+    @db.GetHtml()
+</div>
+<br />
+<br />
+<h2>On-Going Tasks</h2>
+<div>
+    @{ WebGrid db1 = new WebGrid(source: Model.etasksss, canPage: true, rowsPerPage: 10);}
+    @db1.GetHtml()
+</div>

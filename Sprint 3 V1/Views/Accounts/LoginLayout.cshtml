@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        .navbar-brand {
+            list-style-type: none;
+            margin: 0;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #333;
+            display: block;
+            color: springgreen;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+            display:none
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>*@
+                @Html.ActionLink("Home", "Index", "Farms", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Land", "Index", "Lands", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Field", "Index", "Fields", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Crops", "Index", "CropInfoes", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Employees", "Index", "Employees", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Employee Positions", "Index", "EmpPos", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Positions", "Index", "Positions", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Tasks", "Index", "ETasks", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Accounts", "Index", "Accounts", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Cart", "Index", "Carts", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Customer", "Index", "Customers", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Orders", "Index", "Orders", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Planted", "Index", "Planteds", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Sales", "Index", "Sales", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Stock", "Index", "Stocks", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a @Html.ActionLink("Home", "Index", "Farms")</a></li>
+                    <li><a @Html.ActionLink("Land", "Index", "Lands")</a></li>
+                    <li><a @Html.ActionLink("Field", "Index", "Fields")</a></li>
+                    <li><a @Html.ActionLink("Crops", "Index", "Cropinfoes")</a></li>
+                    <li><a @Html.ActionLink("Employees", "Index", "Employees")</a></li>
+                    <li><a @Html.ActionLink("Employee Positions", "Index", "EmpPos")</a></li>
+                    <li><a @Html.ActionLink("Tasks", "Index", "ETasks")</a></li>
+                    <li><a @Html.ActionLink("Accounts", "Index", "Accounts")</a></li>
+                    <li><a @Html.ActionLink("Planted", "Index", "Planteds")</a></li>
+                    <li><a @Html.ActionLink("Stock", "Index", "Stocks")</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿@model Sprint_3_V1.ViewModels.CheckoutViewModel
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+<h2>CheckOut</h2>
+@using (Html.BeginForm("CheckOut", "Orders", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <p class="text-danger" style="font-size:larger">
+        @ViewBag.ordererror
+    </p>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CustomerID)
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CustomerName)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.PaymentOption)
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.PaymentOption, new List<SelectListItem>
+                     {
+                new SelectListItem {Text="Cash on Delivery"}
+                     }, new { @id = "Payment", @class = "form-control" })
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.CollectionOption)
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.CollectionOption, new List<SelectListItem>
+                     {
+                new SelectListItem {Text="Pickup"},
+                new SelectListItem {Text="Deliver"}
+                     }, new { @id = "collection", @class = "form-control" })
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Total)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            
+        </td>
+    </tr>
+    
+</table>
+
+@Html.Action("CheckOutHelper", "Orders", new { @style = "margin-left:10px;" })
+<br />
+<br />
+
+@*@Html.ActionLink("CheckOut", "Checkout", new { collection = Model.PaymentOption, payment=Model.PaymentOption })*@
+
+    <input type="submit" value="Create" class="btn btn-success" />
+
+}
+
+
+
+

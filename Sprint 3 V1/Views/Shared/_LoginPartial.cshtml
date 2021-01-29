@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+@*<link href="~/Content/Main.css" rel="stylesheet" />*@
+<link href='@Url.Content("~/Content/Style.css")' rel="stylesheet" type="text/css" />
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Accounts", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right text-head" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Cart", "Cart", "Customers")</li>
+
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.Name + " !", "CustomerPage", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "text-head" })
+            </li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="text-head"> Log off </a>
+            </li>
+        </ul>
+    }
+}
+else
+{
+        <ul class="nav navbar-nav navbar-right" style="margin-top:4px">
+            <li>@Html.ActionLink("Register", "Register", "Accounts", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "text-head" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Accounts", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "text-head" })</li>
+            <li>@Html.ActionLink("Store", "Store", "Stocks")</li>
+
+            
+        </ul>
+}

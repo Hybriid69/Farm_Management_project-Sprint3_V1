@@ -1,0 +1,74 @@
+﻿body {
+    background-color: #2a2209;
+    background-image: url(../Content/Images/Image2.jpg);
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: wheat;
+}
+
+div {
+    color: white;
+}
+
+    div:link {
+        color: springgreen;
+    }
+
+button {
+    color: springgreen;
+}
+
+table {
+    padding: 8px;
+    color: wheat;
+    background-color: #2a2209;
+}
+
+tr {
+    color: springgreen;
+    padding: 8px
+}
+
+td {
+    color: springgreen;
+    padding: 8px;
+}
+
+th {
+    color: white;
+    padding: 8px
+}
+
+.control-label {
+    color: #00d000;
+}
+
+.btn {
+    background-color: forestgreen;
+    color: #ffffff;
+}
+
+Html.ActionLink {
+    background-color: mediumspringgreen;
+    currentColor:;
+    color: wheat;
+}
+
+.body-content {
+    background-color: #2a2209;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.navbar {
+    background-color: #2a2209;
+}
